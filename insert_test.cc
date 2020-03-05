@@ -15,13 +15,15 @@ main (int argc, char* argv[])
 	srand(seed);
 	int number = rand() % 100001;
 	printf("number is %d\n", number);
-	int nprobes_total = 0;
+	double nprobes_total = 0;
 	double load = 0;
-	int cnt = 0;
+	double cnt = 0;
 	while(cnt<5){
 		nprobes_total = nprobes_total + hashTable.insert(number);
 		cnt++;
-		load = hashTable.size()/100;
+		double size = (double)hashTable.size();
+		double capacity = (double)hashTable.capacity();
+		load = size/capcity;
 		printf("load is %f\n",load);
 		hashTable.setLoad(load);
 		load = hashTable.load_factor();
