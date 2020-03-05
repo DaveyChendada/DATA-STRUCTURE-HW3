@@ -10,10 +10,10 @@ using namespace std;
 HashTable::HashTable(void){
 	int i =0;
 	load = 0;
-	nSlot = 1000;
-	map = new int[1000];
+	nSlot = 100;
+	map = new int[100];
 	nElem = 0;
-	for(i=0;i<1000;i++){
+	for(i=0;i<100;i++){
 		map[i] = -1;
 	}
 }
