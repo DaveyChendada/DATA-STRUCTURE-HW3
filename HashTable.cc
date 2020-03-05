@@ -27,6 +27,7 @@ int HashTable::insert(int value){
 	int nprobes = 0;
 	int temp = value / nSlot;
 	int index = value - temp*nSlot;
+	printf("the index is %d", index);
 	while(map[index]!=-1){
 		double a = floor(A*index);
 		int b = (int) a;
@@ -34,7 +35,8 @@ int HashTable::insert(int value){
 		double tmp2 = tmp*index;
 		double tmp3 = floor(tmp2);
 		index = (int) tmp3;
-		nprobes ++;
+		printf("the index2 is %d", index);
+		nprobes= nprobes +1;
 		if(nprobes>=nSlot){
 			return -1;
 		}
