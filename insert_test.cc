@@ -34,7 +34,6 @@ main (int argc, char* argv[])
 		double size = (double)hashTable.size();
 		double capacity = (double)hashTable.capacity();
 		load = size/capacity;
-		printf("load is %f\n",load);
 		hashTable.setLoad(load);
 		load = hashTable.load_factor();	
 	}
