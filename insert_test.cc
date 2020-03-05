@@ -18,7 +18,7 @@ main (int argc, char* argv[])
 	double nprobes_total = 0;
 	double load = 0;
 	double cnt = 0;
-	while(cnt<5){
+	while(load<0.5){
 		nprobes_total = nprobes_total + hashTable.insert(number);
 		cnt++;
 		double size = (double)hashTable.size();
