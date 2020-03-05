@@ -10,7 +10,6 @@ int
 main (int argc, char* argv[])
 {
 	HashTable hashTable;
-	unsigned seed;
 	int i = 0;
 	int cnt1 = 10000;
 	int cnt2 = 10000;
@@ -22,8 +21,6 @@ main (int argc, char* argv[])
 	int probe_total = 0;
 	int probe_num = 0;
 	while(load<0.5){
-		seed = time(0);
-		srand(seed);
 		int number = rand() % 100001;
 		nprobes_total = nprobes_total + hashTable.insert(number);
 		cnt++;
@@ -35,8 +32,6 @@ main (int argc, char* argv[])
 	}
 	
 	for(i=0;i<3;i++){
-		seed = time(0);
-		srand(seed);
 		int number = rand() % 100001;
 		printf("probe: %d\n", number);
 		hashTable.find(number, probe_num);
@@ -50,8 +45,6 @@ main (int argc, char* argv[])
 	
 	
 	while(load<0.9){
-		seed = time(0);
-		srand(seed);
 		int number = rand() % 100001;
 		nprobes_total = nprobes_total + hashTable.insert(number);
 		cnt++;
@@ -62,8 +55,6 @@ main (int argc, char* argv[])
 		load = hashTable.load_factor();	
 	}
 	for(i=0;i<3;i++){
-		seed = time(0);
-		srand(seed);
 		int number = rand() % 100001;
 		hashTable.find(number, probe_num);
 		probe_total = probe_total + probe_num;

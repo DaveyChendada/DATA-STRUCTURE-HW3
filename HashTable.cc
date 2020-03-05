@@ -27,8 +27,7 @@ HashTable::~HashTable(void){
 
 int HashTable::insert(int value){
 	int nprobes = 0;
-	int temp = value / nSlot;
-	int index = value - temp*nSlot;
+	int index = floor(1000*((value*A)-floor(value*A)));
 	if(map[index]==-1){
 		map[index] = value;
 		this->nElem++;
@@ -60,8 +59,7 @@ void HashTable::setLoad(double value){
 
 bool HashTable::find(int value, int& nProbes){
 	int nprobes = 0;
-	int temp = value / nSlot;
-	int index = value - temp*nSlot;
+	int index = floor(1000*((value*A)-floor(value*A)));
 	while(nprobes<1001 && map[index]!=-1){
 		if(map[index]==value){
 			return true;
@@ -69,7 +67,6 @@ bool HashTable::find(int value, int& nProbes){
 		index = (index+1)/1000;
 		nprobes++;
 		nProbes = nprobes;
-		printf("nProbes: %d\n", nProbes);
 	}
 	return false;
 	
