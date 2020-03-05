@@ -14,7 +14,7 @@ main (int argc, char* argv[])
 	int nprobes_total = 0;
 	double load = 0;
 	int cnt = 0;
-	while(load < 0.5){
+	while(cnt<5){
 		seed = time(0);
 		srand(seed);
 		int number = rand() % 100001;
