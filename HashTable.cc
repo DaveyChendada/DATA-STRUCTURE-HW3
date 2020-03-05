@@ -28,7 +28,9 @@ int HashTable::insert(int value){
 	int temp = value / nSlot;
 	int index = value - temp*nSlot;
 	while(map[index]!=-1){
-		double tmp = A*index%1;
+		double a = floor(A*index);
+		int b = (int) a;
+		double tmp = A*index - b;
 		double tmp2 = tmp*index;
 		double tmp3 = floor(tmp2);
 		index = (int) tmp3;
