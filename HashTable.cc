@@ -57,3 +57,19 @@ void HashTable::setSize(int value){
 void HashTable::setLoad(double value){
 	this->load = value;
 }
+
+bool HashTable::find(int value, int& nProbes){
+	int nprobes = 0;
+	int temp = value / nSlot;
+	int index = value - temp*nSlot;
+	while(nprobes<1001 && map[index]!=-1){
+		if(map[index]==value){
+			return true;
+		}
+		index = (index+1)/1000;
+		nprobes++;
+		nProbes = nprobes;
+	}
+	return false;
+	
+}
