@@ -10,10 +10,10 @@ using namespace std;
 HashTable::HashTable(void){
 	int i =0;
 	load = 0;
-	nSlot = 100;
-	map = new int[100];
+	nSlot = 1000;
+	map = new int[1000];
 	nElem = 0;
-	for(i=0;i<100;i++){
+	for(i=0;i<1000;i++){
 		map[i] = -1;
 	}
 }
@@ -30,23 +30,26 @@ int HashTable::insert(int value){
 	int temp = value / nSlot;
 	int index = value - temp*nSlot;
 	printf("the index is %d", index);
-	while(map[index]!=-1){
-		double a = floor(A*index);
-		int b = (int) a;
-		double tmp = A*index - b;
-		double tmp2 = tmp*index;
-		double tmp3 = floor(tmp2);
-		index = (int) tmp3;
-		printf("the index2 is %d", index);
-		nprobes= nprobes +1;
-		if(nprobes>=nSlot){
-			return -1;
-		}
+	if(map[index]==-1){
+		map[index] = value;
+		this->nElem++;
+		return nprobes;
 	}
-	map[index] = value;
-	this->nElem++;
-	printf("the nprobes is %d", nprobes);
-	return nprobes;
+	else{
+		while(map[index]!=-1){
+			index = (index + 1)%1000;
+			nprobes++;
+			if(nprobes>=nSlot){
+				return -1;
+			}
+		}
+		map[index] = value;
+		this->nElem++;
+		printf("the nprobes is %d", nprobes);
+		return nprobes;
+	}
+	
+	
 }
 
 void HashTable::setSize(int value){
