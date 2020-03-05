@@ -22,7 +22,7 @@ main (int argc, char* argv[])
 		nprobes_total = nprobes_total + hashTable.insert(number);
 		cnt++;
 		load = hashTable.load_factor();
-		printf("%Elem num is %f\n", hashTable.load_factor());
+		printf("Elem num is %f\n", hashTable.load_factor());
 	}
 	printf("50%% full: %f\n", nprobes_total/cnt);
 }
