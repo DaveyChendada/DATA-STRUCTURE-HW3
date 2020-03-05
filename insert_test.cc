@@ -14,7 +14,6 @@ main (int argc, char* argv[])
 	seed = time(0);
 	srand(seed);
 	int number = rand() % 100001;
-	printf("number is %d\n", number);
 	double nprobes_total = 0;
 	double load = 0;
 	double cnt = 0;
@@ -24,10 +23,20 @@ main (int argc, char* argv[])
 		double size = (double)hashTable.size();
 		double capacity = (double)hashTable.capacity();
 		load = size/capacity;
-		printf("load is %f\n",load);
 		hashTable.setLoad(load);
 		load = hashTable.load_factor();
 		
 	}
 	printf("50%% full: %f\n", nprobes_total/cnt);
+	while(load<0.9){
+		nprobes_total = nprobes_total + hashTable.insert(number);
+		cnt++;
+		double size = (double)hashTable.size();
+		double capacity = (double)hashTable.capacity();
+		load = size/capacity;
+		printf("load is %f\n",load);
+		hashTable.setLoad(load);
+		load = hashTable.load_factor();	
+	}
+	printf("90%% full: %f\n", nprobes_total/cnt);
 }
