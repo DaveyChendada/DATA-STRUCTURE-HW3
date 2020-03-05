@@ -49,6 +49,8 @@ main (int argc, char* argv[])
 	
 	
 	while(load<0.9){
+		seed = time(0);
+		srand(seed);
 		nprobes_total = nprobes_total + hashTable.insert(number);
 		cnt++;
 		double size = (double)hashTable.size();
