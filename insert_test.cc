@@ -19,10 +19,6 @@ main (int argc, char* argv[])
 	double load = 0;
 	int cnt = 0;
 	while(cnt<5){
-		
-
-		
-		printf("%Lg\n", nprobes_total/cnt);
 		nprobes_total = nprobes_total + hashTable.insert(number);
 		cnt++;
 		load = hashTable.load_factor();
