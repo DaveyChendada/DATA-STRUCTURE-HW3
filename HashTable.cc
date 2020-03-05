@@ -69,6 +69,7 @@ bool HashTable::find(int value, int& nProbes){
 		index = (index+1)/1000;
 		nprobes++;
 		nProbes = nprobes;
+		printf("nProbes: %d\n", nProbes);
 	}
 	return false;
 	
