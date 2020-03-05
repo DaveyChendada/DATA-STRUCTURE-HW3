@@ -33,7 +33,6 @@ main (int argc, char* argv[])
 	
 	for(i=0;i<10000;i++){
 		int number = rand() % 100001;
-		printf("probe: %d\n", number);
 		hashTable.find(number, probe_num);
 		//printf("probe: %d\n", probe_num);
 		probe_total = probe_total + probe_num;
