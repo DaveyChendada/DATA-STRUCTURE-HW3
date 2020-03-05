@@ -44,16 +44,16 @@ int HashTable::insert(int value){
 		}
 	}
 	map[index] = value;
-	this.nElem++;
-	this.load = nElem/nSlot;
+	this->nElem++;
+	this->load = nElem/nSlot;
 	printf("the nprobes is %d", nprobes);
 	return nprobes;
 }
 
 void HashTable::setSize(int value){
-	this.nElem = value;
+	this->nElem = value;
 }
 
 void HashTable::setLoad(double value){
-	this.load = value;
+	this->load = value;
 }

@@ -23,7 +23,7 @@ class HashTable
   double load_factor() { return load; }
   
   void setSize(int value);
-  void setload(double value);
+  void setLoad(double value);
 
   private:
   /* declare your data */
