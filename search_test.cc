@@ -34,10 +34,11 @@ main (int argc, char* argv[])
 		load = hashTable.load_factor();
 	}
 	
-	for(i=0;i<10000;i++){
+	for(i=0;i<3;i++){
 		seed = time(0);
 		srand(seed);
 		int number = rand() % 100001;
+		printf("probe: %d\n", number);
 		hashTable.find(number, probe_num);
 		//printf("probe: %d\n", probe_num);
 		probe_total = probe_total + probe_num;
@@ -60,7 +61,7 @@ main (int argc, char* argv[])
 		hashTable.setLoad(load);
 		load = hashTable.load_factor();	
 	}
-	for(i=0;i<10000;i++){
+	for(i=0;i<3;i++){
 		seed = time(0);
 		srand(seed);
 		int number = rand() % 100001;
