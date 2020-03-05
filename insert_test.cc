@@ -21,6 +21,8 @@ main (int argc, char* argv[])
 	while(cnt<5){
 		nprobes_total = nprobes_total + hashTable.insert(number);
 		cnt++;
+		load = hashTable.size()/hashTable.capacity();
+		hashTable.setLoad(load)
 		load = hashTable.load_factor();
 		printf("Elem num is %f\n", hashTable.load_factor());
 	}
