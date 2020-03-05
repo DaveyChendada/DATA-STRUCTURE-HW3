@@ -23,6 +23,8 @@ HashTable::~HashTable(void){
 	delete[] map;
 }
 
+
+
 int HashTable::insert(int value){
 	int nprobes = 0;
 	int temp = value / nSlot;
@@ -42,8 +44,16 @@ int HashTable::insert(int value){
 		}
 	}
 	map[index] = value;
-	nElem++;
-	load = nElem/nSlot;
+	this.nElem++;
+	this.load = nElem/nSlot;
 	printf("the nprobes is %d", nprobes);
 	return nprobes;
+}
+
+void HashTable::setSize(int value){
+	this.nElem = value;
+}
+
+void HashTable::setLoad(double value){
+	this.load = value;
 }

@@ -21,6 +21,9 @@ class HashTable
   int capacity() { return nSlot; }
   int size() { return nElem; }
   double load_factor() { return load; }
+  
+  void setSize(int value);
+  void setload(double value);
 
   private:
   /* declare your data */
