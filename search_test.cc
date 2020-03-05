@@ -20,8 +20,7 @@ main (int argc, char* argv[])
 	double load = 0;
 	double cnt = 0;
 	int probe_total = 0;
-	int probe = 0;
-	int& probe_num = probe;
+	int probe_num = 0;
 	while(load<0.5){
 		seed = time(0);
 		srand(seed);
