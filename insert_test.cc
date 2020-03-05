@@ -11,12 +11,13 @@ main (int argc, char* argv[])
 {
 	HashTable hashTable;
 	unsigned seed;
+	seed = time(0);
+	srand(seed);
 	int nprobes_total = 0;
 	double load = 0;
 	int cnt = 0;
 	while(cnt<5){
-		seed = time(0);
-		srand(seed);
+
 		int number = rand() % 100001;
 		nprobes_total = nprobes_total + hashTable.insert(number);
 		cnt++;
