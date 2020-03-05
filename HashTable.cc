@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
-#include <math.h> double floor(double x); 
+#include <math.h> 
 using namespace std;
 
 #define A 0.618
