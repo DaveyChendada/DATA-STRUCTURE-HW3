@@ -25,7 +25,8 @@ HashTable::~HashTable(void){
 
 int HashTable::insert(int value){
 	int nprobes = 0;
-	int index = value % nSlot;
+	int temp = value / nSlot;
+	int index = value - temp*nSlot;
 	while(map[index]!=-1){
 		double tmp = A*index%1;
 		double tmp2 = tmp*index;
