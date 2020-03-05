@@ -20,7 +20,7 @@ main (int argc, char* argv[])
 		int number = rand() % 100001;
 		nprobes_total = nprobes_total + hashTable.insert(number);
 		cnt++;
-		load = hashTable.load;
+		load = hashTable.load_factor();
 	}
 	printf("50% full: %Lg\n", nprobes_total/cnt);
 }
