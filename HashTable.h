@@ -27,7 +27,7 @@ class HashTable
   double load;     // track the load factor of table
   int    nSlot;    // # slots i.e. max # elements can hold 
   int    nElem;    // current # elements in table
-  int[]	map;
+  int*	map;
  };
 
 
