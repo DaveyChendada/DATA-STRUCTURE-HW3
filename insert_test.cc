@@ -23,5 +23,5 @@ main (int argc, char* argv[])
 		load = hashTable.load_factor();
 		printf("%Lg\n", nprobes_total/cnt);
 	}
-	printf("50% full: %Lg\n", nprobes_total/cnt);
+	printf("50%% full: %Lg\n", nprobes_total/cnt);
 }
